@@ -18,7 +18,6 @@ public:
 	//--------------------------------------------------------------
     T3ndril(ParticleSystem* _system, float _x, float _y, float _z, Particle* _followPoint) {
 		system = _system;
-		
 		Particle* firstParticle = system->makeParticle(1.f, _x, _y, _z);
 		particles.push_back(firstParticle);
 		system->makeSpring(_followPoint, firstParticle, .1f, .1f, 5);
@@ -53,7 +52,7 @@ public:
         ofAddListener(ofEvents.mouseReleased, this, &Tendrils::mouseReleased);
         ofAddListener(ofEvents.keyPressed,    this, &Tendrils::keyPressed);
         
-        physics = new ParticleSystem(0.f, .05f);
+        physics = new ParticleSystem(-.1f, .05f);
         
         mouse = physics->makeParticle();
         mouse->makeFixed();
