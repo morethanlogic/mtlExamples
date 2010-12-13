@@ -32,10 +32,10 @@ public:
         
         // Try this to see how Euler is faster, but borderline unstable.
         // 500 particles = 24 fps on my machine
-        //physics->setIntegrator(kModifiedEuler); 
+        physics->setIntegrator(kModifiedEuler); 
         
         // Now try this to see make it more damped, but stable.
-        //physics->setDrag(.2f);
+        physics->setDrag(.2f);
         
         scale     = 1;
         centroidX = 0;
